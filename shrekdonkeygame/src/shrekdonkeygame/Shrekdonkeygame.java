@@ -9,6 +9,7 @@ import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 import BYUI.CIT260.ShrekDonkeyGame.model.Phrase;
 import BYUI.CIT260.ShrekDonkeyGame.model.Player;
 import BYUI.CIT260.ShrekDonkeyGame.model.RegularScene;
+import BYUI.CIT260.ShrekDonkeyGame.model.Shrek;
 
 public class Shrekdonkeygame {
     public static void main(String[] args) {
@@ -80,6 +81,13 @@ public class Shrekdonkeygame {
         
         String eneSceneInfo = eneSceneOne.toString();
         System.out.println(eneSceneInfo);
+        
+        Shrek shrekOne = new Shrek();
+        
+        shrekOne.setShrekMood(10);
+        
+        String shrekInfo = shrekOne.toString();
+        System.out.println(shrekInfo);
         
      }
 }
