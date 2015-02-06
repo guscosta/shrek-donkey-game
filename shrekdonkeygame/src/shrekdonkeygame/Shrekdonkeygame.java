@@ -8,6 +8,7 @@ import BYUI.CIT260.ShrekDonkeyGame.model.Location;
 import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 import BYUI.CIT260.ShrekDonkeyGame.model.Phrase;
 import BYUI.CIT260.ShrekDonkeyGame.model.Player;
+import BYUI.CIT260.ShrekDonkeyGame.model.PuzzleScene;
 import BYUI.CIT260.ShrekDonkeyGame.model.RegularScene;
 import BYUI.CIT260.ShrekDonkeyGame.model.Shrek;
 
@@ -88,6 +89,14 @@ public class Shrekdonkeygame {
         
         String shrekInfo = shrekOne.toString();
         System.out.println(shrekInfo);
+        
+        PuzzleScene puzzleOne = new PuzzleScene();
+        
+        puzzleOne.setPuzzleName("jump distance");
+        puzzleOne.setAnswer(100);
+        
+        String puzzleInfo = puzzleOne.toString();
+        System.out.println(puzzleInfo);
         
      }
 }
