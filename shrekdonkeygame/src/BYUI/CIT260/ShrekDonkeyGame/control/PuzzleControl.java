@@ -1,14 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package BYUI.CIT260.ShrekDonkeyGame.control;
 
-/**
- *
- * @author hecto_000
- */
 public class PuzzleControl {
+    
+    public double calcJumpStrength(double distanceValue, double weightValue, double charactersValue){
+
+	if (distanceValue <= 0){
+            return -56;
+        }
+	if (weightValue <=0){
+            return -56;
+        }
+	double totalStrength = distanceValue*weightValue/charactersValue;
+            return totalStrength;
+    }
     
 }
