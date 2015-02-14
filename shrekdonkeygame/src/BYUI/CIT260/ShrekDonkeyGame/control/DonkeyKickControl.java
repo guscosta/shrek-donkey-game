@@ -5,10 +5,25 @@
  */
 package BYUI.CIT260.ShrekDonkeyGame.control;
 
-/**
- *
- * @author hecto_000
- */
 public class DonkeyKickControl {
-    
+
+    public double calcKick(double enemyWeight, double kickSpeed) {
+        if (enemyWeight <= 0){  
+            // “Enemy weight is zero or a negative number”
+            return -1;
+        }
+        if (kickSpeed <= 0 || kickSpeed > 33){
+            // “Please enter a value from 1 to 33 for kick speed’”
+            return -1;
+        }
+        
+        double kickForce = (enemyWeight * kickSpeed) / 0.05;
+
+        
+        return kickForce;
+    }
+
+
 }
+
+
