@@ -37,9 +37,9 @@ public class PuzzleControlTest {
         System.out.println("calcJumpStrength");
         double distanceValue = 5;
         double weightValue = 300;
-        double charactersValue = 9;
+        double charactersValue = 27;
         PuzzleControl instance = new PuzzleControl();
-        double expResult = 56;
+        int expResult = 56;
         double result = instance.calcJumpStrength(distanceValue, weightValue, charactersValue);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
@@ -51,7 +51,7 @@ public class PuzzleControlTest {
         System.out.println("calcJumpStrength 2");
         distanceValue = 0;
         weightValue = 300;
-        charactersValue = 9;
+        charactersValue = 27;
         expResult = 0;
         result = instance.calcJumpStrength(distanceValue, weightValue, charactersValue);
         assertEquals(expResult, result, 0.0);
@@ -64,7 +64,7 @@ public class PuzzleControlTest {
         System.out.println("calcJumpStrength 3");
         distanceValue = 5;
         weightValue = -300;
-        charactersValue = 9;
+        charactersValue = 27;
         expResult = -56;
         result = instance.calcJumpStrength(distanceValue, weightValue, charactersValue);
         assertEquals(expResult, result, 0.0);
@@ -77,7 +77,7 @@ public class PuzzleControlTest {
         System.out.println("calcJumpStrength 4");
         distanceValue = 5;
         weightValue = 0;
-        charactersValue = 9;
+        charactersValue = 27;
         expResult = 0;
         result = instance.calcJumpStrength(distanceValue, weightValue, charactersValue);
         assertEquals(expResult, result, 0.0);
@@ -90,7 +90,7 @@ public class PuzzleControlTest {
         System.out.println("calcJumpStrength 5");
         distanceValue = 1;
         weightValue = 500;
-        charactersValue = 9;
+        charactersValue = 27;
         expResult = 19;
         result = instance.calcJumpStrength(distanceValue, weightValue, charactersValue);
         assertEquals(expResult, result, 0.0);
@@ -103,7 +103,7 @@ public class PuzzleControlTest {
         System.out.println("calcJumpStrength 6");
         distanceValue = 15;
         weightValue = 100;
-        charactersValue = 9;
+        charactersValue = 27;
         expResult = 56;
         result = instance.calcJumpStrength(distanceValue, weightValue, charactersValue);
         assertEquals(expResult, result, 0.0);
