@@ -11,6 +11,7 @@ import BYUI.CIT260.ShrekDonkeyGame.model.Player;
 import BYUI.CIT260.ShrekDonkeyGame.model.PuzzleScene;
 import BYUI.CIT260.ShrekDonkeyGame.model.RegularScene;
 import BYUI.CIT260.ShrekDonkeyGame.model.Shrek;
+import BYUI.CIT260.ShrekDonkeyGame.view.StartProgramView;
 
 public class Shrekdonkeygame {
     public static void main(String[] args) {
@@ -97,6 +98,10 @@ public class Shrekdonkeygame {
         
         String puzzleInfo = puzzleOne.toString();
         System.out.println(puzzleInfo);
+        
+          //create StartProgramView and start the program
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.startProgram();
         
      }
 }

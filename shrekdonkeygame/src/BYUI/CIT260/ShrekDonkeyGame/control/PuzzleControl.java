@@ -4,14 +4,14 @@ public class PuzzleControl {
     
     public double calcJumpStrength(double distanceValue, double weightValue, double charactersValue){
 
-	if (distanceValue <= 0){
+	if (distanceValue <=0){
             return -56;
         }
 	if (weightValue <=0){
             return -56;
         }
 	double totalStrength = distanceValue*weightValue/charactersValue;
-            return totalStrength;
+            return Math.round(totalStrength);
     }
     
 }
