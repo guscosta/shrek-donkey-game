@@ -14,94 +14,30 @@ import BYUI.CIT260.ShrekDonkeyGame.model.Shrek;
 import BYUI.CIT260.ShrekDonkeyGame.view.StartProgramView;
 
 public class Shrekdonkeygame {
+            
+    private static Game currentGame = null;
+    private static Player player = null;
+
     public static void main(String[] args) {
-        Player playerOne = new Player();
         
-        playerOne.setName("Pedro Picapiedra");
-        
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
-        
-        Game gameOne = new Game();
-        
-        gameOne.setTime(15.00);
-        gameOne.setWinner("Simba");
-        
-        String gameInfo = gameOne.toString();
-        System.out.println(gameInfo);
-        
-        Actor actorOne = new Actor();
-        
-        actorOne.setName("Donkey");
-        
-        String actorInfo = actorOne.toString();
-        System.out.println(actorInfo);
-        
-        Phrase phraseOne = new Phrase();
-        
-        phraseOne.setPhraseType("Friendly");
-        phraseOne.setMessage("You are a good friend");
-        
-        String phraseInfo = phraseOne.toString();
-        System.out.println(phraseInfo);
-        
-        Donkey donkeyKick = new Donkey();
-        
-        donkeyKick.setKick(1000);
-        
-        String donkeyInfo = donkeyKick.toString();
-        System.out.println(donkeyInfo);        
-        
-        Map mapOne = new Map();
-        
-        mapOne.setColumnCount(10);
-        mapOne.setRowCount(5);
-        
-        String mapInfo = mapOne.toString();
-        System.out.println(mapInfo);
-        
-        Location locationOne = new Location();
-        
-        locationOne.setRow(14);
-        locationOne.setColumn(3);
-        locationOne.setVisited(true);
-        locationOne.setAmountRemaining(30);
-        
-        String locationInfo = locationOne.toString();
-        System.out.println(locationInfo);
-        
-        RegularScene regSceneOne = new RegularScene();
-        
-        regSceneOne.setDescription("robin hood doing the jig");
-        
-        String regSceneInfo = regSceneOne.toString();
-        System.out.println(regSceneInfo);
-        
-        EnemyScene eneSceneOne = new EnemyScene();
-        
-        eneSceneOne.setName("farquad being a jerk");
-        
-        String eneSceneInfo = eneSceneOne.toString();
-        System.out.println(eneSceneInfo);
-        
-        Shrek shrekOne = new Shrek();
-        
-        shrekOne.setShrekMood(10);
-        
-        String shrekInfo = shrekOne.toString();
-        System.out.println(shrekInfo);
-        
-        PuzzleScene puzzleOne = new PuzzleScene();
-        
-        puzzleOne.setPuzzleName("jump distance");
-        puzzleOne.setAnswer(100);
-        
-        String puzzleInfo = puzzleOne.toString();
-        System.out.println(puzzleInfo);
-        
-          //create StartProgramView and start the program
-            StartProgramView startProgramView = new StartProgramView();
-            startProgramView.startProgram();
-        
-     }
+        //create StartProgramView and start the program
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram();
+    }   
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        Shrekdonkeygame.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Shrekdonkeygame.player = player;
+    }
 }

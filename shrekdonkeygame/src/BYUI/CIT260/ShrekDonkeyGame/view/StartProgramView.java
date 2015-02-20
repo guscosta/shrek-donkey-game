@@ -18,6 +18,8 @@ public class StartProgramView {
     String playersName = this.getPlayersName();
     //create and save the player object
     Player player = ProgramControl.createPlayer(playersName);
+    //display a personalized welcome message
+    this.displayWelcomeMessage(player);
     }
 
     public void displayBanner() {
@@ -66,6 +68,13 @@ public class StartProgramView {
         
         return playersName; //return the name <---- you dont say?
         
+    }
+
+    public void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n============================================");
+        System.out.println("\twelcome to the jungle " + player.getName());
+        System.out.println("\twe got fun and games!");
+        System.out.println("==============================================");
     }
     
 }
