@@ -20,10 +20,13 @@ public class StartProgramView {
     Player player = ProgramControl.createPlayer(playersName);
     //display a personalized welcome message
     this.displayWelcomeMessage(player);
+    //display the main menu
+    MainMenuView mainMenu = new MainMenuView();
+    mainMenu.displayMenu();
     }
 
     public void displayBanner() {
-        System.out.println("\n\n*************************************************");
+        System.out.println("\n\n***********************************************************");
                 
         System.out.println("*                                                          *"
                 + "\n* This is the game of Shrek and Donkey                     *"
@@ -39,7 +42,7 @@ public class StartProgramView {
                 + "\n* Good luck and have fun in this adventure.                *"
                 + "\n*                                                          *");
                 
-        System.out.println("*****************************************************");
+        System.out.println("***************************************************************");
                 
     }
 
