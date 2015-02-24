@@ -10,10 +10,10 @@ public class HelpMenuView {
             +"\n----------------------------------------"
             +"\nG - What is the purpose of the game"
             +"\nM - How to move"
-            +"\nE - About annoying phrases"
+            +"\nA - About annoying phrases"
             +"\nK - About donkey kick"
             +"\nP - About puzzles"
-            +"\nQ - Quit"
+            +"\nE - Exit"
             +"\n----------------------------------------";
     
     public void displayHelpMenu() {
@@ -65,7 +65,7 @@ public class HelpMenuView {
             case 'M': //show move help
                 this.getMoveHow();
                 break;
-            case 'E': //show annoying phrases help
+            case 'A': //show annoying phrases help
                 this.getAnnoying();
                 break;
             case 'H': //show friendly phrases help
@@ -77,9 +77,7 @@ public class HelpMenuView {
             case 'K': //show donkey kick help
                 this.getKick();
                 break;
-            case 'Q': //go back to main menu
-                MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMenu();
+            case 'E': //go back to main menu
             return;
             default: 
                 System.out.println("\n*** Invalid selection *** Try again");
