@@ -65,6 +65,25 @@ public class MoveToView {
 }
 
     private void getCoordinate() {
-        System.out.println("this function works like wonders");
+               
+        boolean valid = false; //indicate if the input has been retrieved
+        String input = null;
+        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+        
+        while(!valid) { //while a valid input has not been retrieved
+            
+            //prompt for the player's choice
+            System.out.println("Enter a value:");
+            
+            //get the input from the keyboard and trim off the blanks
+            input = keyboard.nextLine();
+            input = input.trim();
+            
+            //if the name is invalid (less than 2 characters in length)
+            if (input.length() < 1) {
+                System.out.println("Press a button");
+                continue; //and repeat again
+                        }
+            }
+        }
     }
-}
