@@ -3,18 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BYUI.CIT260.ShrekDonkeyGame.control;
-
-import BYUI.CIT260.ShrekDonkeyGame.model.Player;
+package BYUI.CIT260.ShrekDonkeyGame.view;
 
 /**
  *
  * @author hecto_000
  */
-public class GameControl {
+public class GameMenuHelpView {
 
-    public static void createNewGame(Player player) {
-        System.out.println("This will create a new game.");
+    void displayHelpMenu() {
+        System.out.println("this works");
     }
     
 }

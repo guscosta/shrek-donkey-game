@@ -30,7 +30,7 @@ public class MainMenuView {
         } while (selection != 'E'); //a selection is not Exit        
     }
     
-public String getInput() {
+    public String getInput() {
         boolean valid = false; //indicate if the input has been retrieved
         String input = null;
         Scanner keyboard = new Scanner(System.in); //keyboard input stream
