@@ -1,5 +1,7 @@
 package BYUI.CIT260.ShrekDonkeyGame.view;
 
+import BYUI.CIT260.ShrekDonkeyGame.control.ShrekStateControl;
+import BYUI.CIT260.ShrekDonkeyGame.model.Phrase;
 import java.util.Scanner;
 
 public class PhraseView {
@@ -57,9 +59,14 @@ public class PhraseView {
         }
 
     private void doAction(char choice) {
+        Phrase phrase = new Phrase();
+        phrase.setAngerValue(0);
+        phrase.setHappinessValue(2);
+        phrase.setPhraseType("a");
+        phrase.setPhraseValue(2);
         switch (choice) {
             case '1': //choose phrase 1
-                this.getPhraseOne();
+                this.getPhraseOne(phrase);
                 break;
             case '2': //choose phrase 2
                 this.getPhraseTwo();
@@ -77,9 +84,11 @@ public class PhraseView {
                     break;
         }
     }
-
-    private void getPhraseOne() {
+    
+    public void getPhraseOne(Phrase phrase) {
         System.out.println("you have successfully annoyed shrek!");
+        ShrekStateControl.calcShrekState(phrase);
+             
     }
 
     private void getPhraseTwo() {
@@ -92,9 +101,5 @@ public class PhraseView {
 
     private void getPhraseFour() {
         System.out.println("shrek kinda likes what youre saying");
-    }
-
-    void displayPhraseView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

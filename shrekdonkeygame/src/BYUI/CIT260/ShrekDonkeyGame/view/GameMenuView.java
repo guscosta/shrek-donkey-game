@@ -89,7 +89,7 @@ public class GameMenuView {
 
     private void displayPhraseMenu() {
         PhraseView phraseView = new PhraseView();
-        phraseView.displayPhraseView();
+        phraseView.phraseSelection();
     }
 
     private void displayKickMenu() {

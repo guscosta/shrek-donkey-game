@@ -30,7 +30,7 @@ public class DonkeyKickView {
             System.out.println("Please enter a value from 1 to 33 for kick speed");
             
             //get the input from the keyboard
-            kickSpeed = .in.nextDouble();
+            kickSpeed = in.nextDouble();
             
             //if the name is invalid (less than 2 characters in length)
             if (kickSpeed <= 0 || kickSpeed > 33) {
