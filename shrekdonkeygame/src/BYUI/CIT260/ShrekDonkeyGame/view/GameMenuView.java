@@ -94,7 +94,7 @@ public class GameMenuView {
 
     private void displayKickMenu() {
         DonkeyKickView donkeyKickView = new DonkeyKickView();
-        donkeyKickView.displayKickMenu();
+        donkeyKickView.displayMenu();
     }
 
     private void displayHelpMenu() {
