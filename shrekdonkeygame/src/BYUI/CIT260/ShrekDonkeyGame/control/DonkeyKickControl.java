@@ -7,7 +7,7 @@ package BYUI.CIT260.ShrekDonkeyGame.control;
 
 public class DonkeyKickControl {
 
-    public double calcKick(double enemyWeight, double kickSpeed) {
+    public static double calcKick(double enemyWeight, double kickSpeed) {
         if (enemyWeight <= 0){  
             // “Enemy weight is zero or a negative number”
             return -1;
@@ -19,9 +19,14 @@ public class DonkeyKickControl {
         
         double kickForce = (enemyWeight * kickSpeed) / 0.05;
 
-        
+           
         return kickForce;
     }
+    
+   public static boolean enemyDefeated(double kickForce, double enemyWeight) {
+       System.out.println("Enemy defeated called");
+       return true;
+   }
 
 
 }
