@@ -9,7 +9,7 @@ public class ShrekStateControl {
     
     public double calcShrekState(char phraseType, double phraseValue, double happinessValue, double angerValue){
         
-        if (phraseValue <= 0){ 
+        if (phraseValue <=  0){ 
 		// “Phrase value is zero or a negative number”
 		return -1;
         }
