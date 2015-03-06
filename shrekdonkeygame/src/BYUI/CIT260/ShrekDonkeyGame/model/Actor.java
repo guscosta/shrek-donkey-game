@@ -12,6 +12,10 @@ import java.util.Objects;
  *
  * @author hecto_000
  */
+
+// Allows that all of the data stored in class instance variables in a class
+// to be translated into a format so that it can be stored on disk or sent
+// across the network
 public class Actor implements Serializable{
     
     //Class instance variables

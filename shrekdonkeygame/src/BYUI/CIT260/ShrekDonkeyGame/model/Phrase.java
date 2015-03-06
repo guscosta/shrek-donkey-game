@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package BYUI.CIT260.ShrekDonkeyGame.model;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- *
- * @author hecto_000
- */
+//this translates the data in the class into a format so it can be stored in
+//disk or sent acrss the network
 public class Phrase implements Serializable{
     
     //Class instance variables
