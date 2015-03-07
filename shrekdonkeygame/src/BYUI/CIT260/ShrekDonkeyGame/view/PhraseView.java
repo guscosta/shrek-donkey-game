@@ -1,8 +1,10 @@
 package BYUI.CIT260.ShrekDonkeyGame.view;
 
-import java.util.Scanner;
+import BYUI.CIT260.ShrekDonkeyGame.control.ShrekStateControl;
+import BYUI.CIT260.ShrekDonkeyGame.model.Phrase;
 
 public class PhraseView extends View {
+    private Phrase phrase;
     public PhraseView() {
         super("\n"
             +"\n-------------------------------------------------"
@@ -22,8 +24,9 @@ public class PhraseView extends View {
         char choice = value.toUpperCase().charAt(0); 
         
         switch (choice) {
-            case '1': //choose phrase 1
-                this.getPhraseOne();
+            case '1': {
+            this.getPhraseOne(phrase);
+        }
                 break;
             case '2': //choose phrase 2
                 this.getPhraseTwo();
@@ -43,8 +46,10 @@ public class PhraseView extends View {
         return true;
     }
 
-    private void getPhraseOne() {
+    public void getPhraseOne(Phrase phrase) {
         System.out.println("you have successfully annoyed shrek!");
+        ShrekStateControl.calcShrekState(phrase);
+             
     }
 
     private void getPhraseTwo() {
