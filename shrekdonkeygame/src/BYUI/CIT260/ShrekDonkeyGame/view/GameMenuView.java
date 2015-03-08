@@ -38,12 +38,12 @@ public class GameMenuView extends View {
             //    this.displayHelpMenu();
             //    break;
             case 'E': // Goes back to the Main Menu.
-                return true;   
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
-                    break;
+                return false;
         }
-        return true;
+        return false;
     }
 
     private void displayLocation() {

@@ -35,12 +35,12 @@ public class PhraseView extends View {
                 this.getPhraseFour();
                 break;
             case 'E': //go back to main menu
-            return true;
+                return true;
             default: 
                 System.out.println("\n*** Invalid selection *** Try again");
-                    break;
+                return false; 
         }
-        return true;
+        return false;
     }
 
     private void getPhraseOne() {
