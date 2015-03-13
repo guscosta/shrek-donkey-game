@@ -10,8 +10,8 @@ public class PuzzleControl {
 	if (weightValue <=0){
             return -56;
         }
-	double totalStrength = distanceValue*weightValue/charactersValue;
-            return Math.round(totalStrength);
+	double totalStrength = Math.round(distanceValue*weightValue/charactersValue);
+            return (totalStrength);
     }
     
 }

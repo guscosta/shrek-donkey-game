@@ -5,7 +5,10 @@
  */
 package BYUI.CIT260.ShrekDonkeyGame.control;
 
+import BYUI.CIT260.ShrekDonkeyGame.model.Game;
+import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 import BYUI.CIT260.ShrekDonkeyGame.model.Player;
+import shrekdonkeygame.Shrekdonkeygame;
 
 /**
  *
@@ -14,7 +17,17 @@ import BYUI.CIT260.ShrekDonkeyGame.model.Player;
 public class GameControl {
 
     public static void createNewGame(Player player) {
-        System.out.println("This will create a new game.");
+        
+        Game game = new Game(); //create new game
+        Shrekdonkeygame.setCurrentGame(game); //save in shrek and donkey game
+        
+        game.setPlayer(player);
+        
+        Map map = MapControl.createMap(); //create and initialize new map
+        game.setMap(map); // save map in game
+        
+        MapControl.moveActorsToStartingLocation(map); //put actors on starting loc.
+        
     }
     
 }

@@ -1,41 +1,132 @@
 package BYUI.CIT260.ShrekDonkeyGame.model;
 
+import java.awt.image.BufferedImage;
 import java.io.Serializable;
+import shrekdonkeygame.Shrekdonkeygame;
+import BYUI.CIT260.ShrekDonkeyGame.model.RegularScene.SceneType;
 
 public class Map implements Serializable {
     
-    private int RowCount;
-    private int ColumnCount;
+    private int rowCount;
+    private int columnCount;
+    private Location[][] locations;
+    
+    private Game[] game;
 
-    public Map() {
+    public Map(int rowCount, int columnCount) {
+        
+        if (rowCount < 1 || columnCount < 1) {
+            System.out.println("The number of columns and rows must be > zero");
+            return;
+        }
+        
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+        
+        //create a 2d array or Location objects
+        this.locations = new Location[rowCount][columnCount];
+        
+        for (int row = 0; row < rowCount; row++) {
+            for (int column = 0; column < columnCount; column++) {
+                //create and initialize new Location object instance
+                Location location = new Location();
+                location.setColumn(columnCount);
+                location.setRow(rowCount);
+                location.setVisited(false);
+                
+                //assign the Location object to the current position in array
+                locations[row][column] = location;
+            }
+        }
+    }
+    
+    private static RegularScene[] createScenes() {
+        BufferedImage image = null;
+        
+        Game game = Shrekdonkeygame.getCurrentGame();
+        
+        RegularScene[] scenes = new RegularScene[SceneType.values().length];
+        
+        RegularScene startingScene = new RegularScene();
+        startingScene.setDescription(
+                "\nDonkey and Shrek are walking together through the swamp.");
+        startingScene.setMapSymbol(" ST ");
+        startingScene.setBlocked(false);
+        startingScene.setTravelTime(240);
+        //ImageIcon startingSceneImage = MapControl.getImage(startingScene, "trollololol");
+        //startingScene.setIcon(startingSceneImage);
+        scenes[SceneType.start.ordinal()] = startingScene;
+        
+        
+        RegularScene finishScene = new RegularScene();
+        finishScene.setDescription(
+            "/nCongratulations you saved Fiona and had Shrek marry her "
+          + "you all live happily ever after.");
+        
+        finishScene.setMapSymbol(" FN ");
+        finishScene.setBlocked(false);
+        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
+        //ImageIcon finishSceneImage = MapControl.getImage(finishScene,
+        //        "trololololollololol");
+        //    finishScene.setIcon(finishSceneImage);
+        scenes[SceneType.finish.ordinal()] = finishScene;
+        return null;
+    }
+    
+    private static void assignScenesToLocations(Map map, RegularScene[] scenes) {
+        Location[][] locations = map.getLocations();
+        
+        //start point
+        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.woods.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.woods.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.field.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.field.ordinal()]);
     }
 
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public Game[] getGame() {
+        return game;
+    }
+
+    public void setGame(Game[] game) {
+        this.game = game;
+    }
+    
+
     public int getRowCount() {
-        return RowCount;
+        return rowCount;
     }
 
     public void setRowCount(int RowCount) {
-        this.RowCount = RowCount;
+        this.rowCount = RowCount;
     }
 
     public int getColumnCount() {
-        return ColumnCount;
+        return columnCount;
     }
 
     public void setColumnCount(int ColumnCount) {
-        this.ColumnCount = ColumnCount;
+        this.columnCount = ColumnCount;
     }
 
     @Override
     public String toString() {
-        return "Map{" + "RowCount=" + RowCount + ", ColumnCount=" + ColumnCount + '}';
+        return "Map{" + "RowCount=" + rowCount + ", ColumnCount=" + columnCount + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 73 * hash + this.RowCount;
-        hash = 73 * hash + this.ColumnCount;
+        hash = 73 * hash + this.rowCount;
+        hash = 73 * hash + this.columnCount;
         return hash;
     }
 
@@ -48,14 +139,13 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (this.RowCount != other.RowCount) {
+        if (this.rowCount != other.rowCount) {
             return false;
         }
-        if (this.ColumnCount != other.ColumnCount) {
+        if (this.columnCount != other.columnCount) {
             return false;
         }
         return true;
     }
 
-   
 }

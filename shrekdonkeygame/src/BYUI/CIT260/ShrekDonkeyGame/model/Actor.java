@@ -5,9 +5,8 @@
  */
 package BYUI.CIT260.ShrekDonkeyGame.model;
 
+import java.awt.Point;
 import java.io.Serializable;
-import java.util.Objects;
-
 /**
  *
  * @author hecto_000
@@ -16,53 +15,53 @@ import java.util.Objects;
 // Allows that all of the data stored in class instance variables in a class
 // to be translated into a format so that it can be stored on disk or sent
 // across the network
-public class Actor implements Serializable{
+public enum Actor implements Serializable{
     
-    //Class instance variables
-    private String name;
-
-    public Actor() {
-    }
+    Shrek("He is a big ogre who lives by himself and everyone fears him."),
+    Donkey("He is a talking donkey who wants to be Shrek's friend."),
+    Fiona("She is a princess locked away in a tower guarded by a dragon.");
     
-    
-    public String getName() {
-        return name;
-    }
+    private final String description;
+    private final Point coordinates;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    private Location location;
+    private Game[] game;
+    private String phrase[];
 
-    @Override
-    public String toString() {
-        return "Actor{" + "name=" + name + '}';
+    Actor(String description) {
+        this.description = description;
+        coordinates = new Point(1,1);
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.name);
-        return hash;
+    public Location getLocation() {
+        return location;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Actor other = (Actor) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Game[] getGame() {
+        return game;
+    }
+
+    public void setGame(Game[] game) {
+        this.game = game;
+    }
+
+    public String[] getPhrase() {
+        return phrase;
+    }
+
+    public void setPhrase(String[] phrase) {
+        this.phrase = phrase;
+    }  
+    
+    public String getDescription() {
+        return description;
     }
     
-    
-    
-    
-    
-    
+    public Point getCoordinates() {
+        return coordinates;
+    }
 }

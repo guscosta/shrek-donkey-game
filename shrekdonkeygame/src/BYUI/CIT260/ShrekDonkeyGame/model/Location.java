@@ -1,31 +1,43 @@
 package BYUI.CIT260.ShrekDonkeyGame.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class Location implements Serializable {
     
-    private int Row;
-    private int Column;
+    private int row;
+    private int column;
     private boolean Visited;
     private int AmountRemaining;
+    private RegularScene scene;
+    private ArrayList<Actor> actors;
 
+    public RegularScene getScene() {
+        return scene;
+    }
+
+    public void setScene(RegularScene scene) {
+        this.scene = scene;
+    }
+    
     public Location() {
     }
 
     public int getRow() {
-        return Row;
+        return row;
     }
 
-    public void setRow(int Row) {
-        this.Row = Row;
+    public void setRow(int row) {
+        this.row = row;
     }
 
     public int getColumn() {
-        return Column;
+        return column;
     }
 
-    public void setColumn(int Column) {
-        this.Column = Column;
+    public void setColumn(int column) {
+        this.column = column;
     }
 
     public boolean isVisited() {
@@ -44,18 +56,28 @@ public class Location implements Serializable {
         this.AmountRemaining = AmountRemaining;
     }
 
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+
     @Override
     public String toString() {
-        return "Location{" + "Row=" + Row + ", Column=" + Column + ", Visited=" + Visited + ", AmountRemaining=" + AmountRemaining + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", Visited=" + Visited + ", AmountRemaining=" + AmountRemaining + ", scene=" + scene + ", actors=" + actors + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + this.Row;
-        hash = 37 * hash + this.Column;
-        hash = 37 * hash + (this.Visited ? 1 : 0);
-        hash = 37 * hash + this.AmountRemaining;
+        int hash = 7;
+        hash = 59 * hash + this.row;
+        hash = 59 * hash + this.column;
+        hash = 59 * hash + (this.Visited ? 1 : 0);
+        hash = 59 * hash + this.AmountRemaining;
+        hash = 59 * hash + Objects.hashCode(this.scene);
+        hash = 59 * hash + Objects.hashCode(this.actors);
         return hash;
     }
 
@@ -68,10 +90,10 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
-        if (this.Row != other.Row) {
+        if (this.row != other.row) {
             return false;
         }
-        if (this.Column != other.Column) {
+        if (this.column != other.column) {
             return false;
         }
         if (this.Visited != other.Visited) {
@@ -80,8 +102,14 @@ public class Location implements Serializable {
         if (this.AmountRemaining != other.AmountRemaining) {
             return false;
         }
+        if (!Objects.equals(this.scene, other.scene)) {
+            return false;
+        }
+        if (!Objects.equals(this.actors, other.actors)) {
+            return false;
+        }
         return true;
     }
 
-    
+   
 }

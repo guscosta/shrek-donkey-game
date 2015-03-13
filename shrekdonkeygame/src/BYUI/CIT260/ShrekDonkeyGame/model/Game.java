@@ -13,9 +13,38 @@ public class Game implements Serializable {
     // Class instance variable
     private double time;
     private String winner;
+    
+    private Player player;
+    private String actors[];
+    private Map map;
 
     public Game() {
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public String[] getActors() {
+        return actors;
+    }
+
+    public void setActors(String[] actors) {
+        this.actors = actors;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
     
     
     //Getter and setter functions

@@ -1,5 +1,7 @@
 package BYUI.CIT260.ShrekDonkeyGame.view;
 
+import BYUI.CIT260.ShrekDonkeyGame.model.Map;
+
 public class GameMenuView extends View {
 
     public GameMenuView(){
@@ -10,6 +12,7 @@ public class GameMenuView extends View {
             +"\nM - Move to a new location"
             +"\nP - Use a Donkey phrase"
             +"\nK - Use a donkey kick"
+            +"\nV - View map"
             //+"\nH - Help"
             +"\nE - Go back to main menu"
             +"\n----------------------------------------");
@@ -26,6 +29,9 @@ public class GameMenuView extends View {
                 break;
             case 'P': // Brings up the phrase menu.
                 this.displayPhraseMenu();
+                break;
+            case 'V': // Brings up the map.
+                this.displayMap();
                 break;
             case 'K': // Brings up the kick menu.
                 this.displayKickMenu();
@@ -61,4 +67,14 @@ public class GameMenuView extends View {
     //private void displayHelpMenu() {
     //    GameMenuHelpView gameMenuHelpView = new GameMenuHelpView();
     //    gameMenuHelpView.display();
+
+    private void displayMap() {
+        public int getLocations(int[][] locations) {
+            
+            System.out.println("MAP");
+            System.out.println(
+                   
+        }
+    }
+
 }

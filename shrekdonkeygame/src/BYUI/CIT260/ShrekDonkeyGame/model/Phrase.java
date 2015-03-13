@@ -14,7 +14,17 @@ public class Phrase implements Serializable{
     private double angerValue;
     private double happinessValue;
     
+    private String actor;
+    
     public Phrase() {
+    }
+
+    public String getActor() {
+        return actor;
+    }
+
+    public void setActor(String actor) {
+        this.actor = actor;
     }
 
     public String getPhraseType() {
