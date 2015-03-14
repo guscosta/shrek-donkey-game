@@ -8,6 +8,7 @@ package BYUI.CIT260.ShrekDonkeyGame.control;
 import BYUI.CIT260.ShrekDonkeyGame.model.Game;
 import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 import BYUI.CIT260.ShrekDonkeyGame.model.Player;
+import BYUI.CIT260.ShrekDonkeyGame.model.RegularScene;
 import shrekdonkeygame.Shrekdonkeygame;
 
 /**
@@ -28,6 +29,10 @@ public class GameControl {
         
         MapControl.moveActorsToStartingLocation(map); //put actors on starting loc.
         
+    }
+
+    static void assignScenesToLocations(Map map, RegularScene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

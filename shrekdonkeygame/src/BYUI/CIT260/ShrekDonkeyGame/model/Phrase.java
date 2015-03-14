@@ -7,6 +7,47 @@ import java.util.Objects;
 //disk or sent acrss the network
 public class Phrase implements Serializable{
     
+    public static PhraseList[] createPhraseList() {
+        PhraseList[] onion = new PhraseList[15];
+        
+        PhraseList onion = new PhraseList();
+        onion.setMessage("onions make people cry!");
+        onion.setPhraseType('a');
+        onion.setPhraseValue(2);
+        phrase[0] = onion;
+        
+        PhraseList[] cake = new PhraseList();
+        cake.setMessage("cakes have layers everybody loves cakes!");
+        cake.setPhraseType('a');
+        cake.setPhraseValue(1);
+        phrase[1] = cake;
+        
+        PhraseList[] friend = new PhraseList();
+        friend.setMessage("but i'm your friend right?");
+        friend.setPhraseType('h');
+        friend.setPhraseValue(2);
+        phrase[2] = friend;
+        
+        PhraseList[] breath = new PhraseList();
+        breath.setMessage("your breath smells like onions, does you breath have layers too?");
+        breath.setPhraseType('a');
+        breath.setPhraseValue(2);
+        phrase[3] = breath;
+        
+        PhraseList[] waffles = new PhraseList();
+        waffles.setMessage("and in the morning, i'll make you waffles!");
+        waffles.setPhraseType('a');
+        waffles.setPhraseValue(1);
+        phrase[4] = onion;
+        
+        PhraseList[]  = new PhraseList();
+        onion.setMessage("onions make people cry!");
+        onion.setPhraseType('a');
+        onion.setPhraseValue(2);
+        phrase[0] = onion;
+            
+                    }
+    
     //Class instance variables
     private String phraseType;
     private String message;

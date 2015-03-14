@@ -69,12 +69,8 @@ public class GameMenuView extends View {
     //    gameMenuHelpView.display();
 
     private void displayMap() {
-        public int getLocations(int[][] locations) {
-            
-            System.out.println("MAP");
-            System.out.println(
-                   
-        }
+        Map.getLocations map.getLocations = new Map.getLocations();
+        map.getLocations();
     }
 
 }
