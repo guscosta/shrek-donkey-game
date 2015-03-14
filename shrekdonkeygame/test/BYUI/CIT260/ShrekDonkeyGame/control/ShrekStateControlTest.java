@@ -45,7 +45,7 @@ public class ShrekStateControlTest {
         ShrekStateControl instance = new ShrekStateControl();
         double expResult = 1; //Expected output returned value
        //Call the function to run the test.
-        double result = instance.calcShrekState(phraseType, phraseValue, happinessValue, angerValue);
+        double result = instance.calcShrekState(phrase.phraseType, phrase.phraseValue, phrase.happinessValue, phrase.angerValue);
         //Compare expected value with actual value.
         assertEquals(expResult, result, 0.0);
         

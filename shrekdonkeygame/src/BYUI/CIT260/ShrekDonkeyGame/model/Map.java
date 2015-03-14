@@ -86,7 +86,7 @@ public class Map implements Serializable {
         locations[0][4].setScene(scenes[SceneType.field.ordinal()]);
         
     }
-    public int getLocations(int[][] locations) {
+    /**public int getLocations(int[][] locations) {
             
             System.out.println("MAP");
             System.out.println(" 1  2  3  4  5 ");
@@ -104,7 +104,7 @@ public class Map implements Serializable {
                                 
                     }
                 }
-    }
+    }**/
     public Location[][] getLocations() {
         return locations;
     }

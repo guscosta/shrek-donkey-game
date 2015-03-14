@@ -5,30 +5,35 @@
  */
 package BYUI.CIT260.ShrekDonkeyGame.control;
 
+import BYUI.CIT260.ShrekDonkeyGame.model.Phrase;
+
 public class ShrekStateControl {
+
+    public static void calcShrekState(Phrase phrase) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
-    public double calcShrekState(char phraseType, double phraseValue, double happinessValue, double angerValue){
+   /** public static double calcShrekState(Phrase phrase){
         
-        if (phraseValue <= 0){ 
+        if (phrase.getPhraseValue() <= 0){ 
 		// “Phrase value is zero or a negative number”
 		return -1;
         }
-        if (angerValue <= 0){
+        else if (phrase.getAngerValue() <= 0){
 		//Display “Anger value is zero or a negative number”
 		return -1;
         }
-        if (happinessValue <= 0){
+        else if (phrase.getHappinessValue() <= 0){
 		//Display “Happiness value is zero or a negative number”
 		return -1;
         }                        
-	if (phraseType == 'a'){
-            angerValue = angerValue + phraseValue;
+        else if (phrase.getPhraseType() == "a"){
+           // phrase.AngerValue() = phrase.getAngerValue() + phrase.getPhraseValue();
         }
-	if (phraseType == 'h'){
-            happinessValue = happinessValue + phraseValue;
+       // else if (phrase.phraseType() == "h"){
+           // phrase.happinessValue() = phrase.getHappinessValue() + phrase.getPhraseValue();
         }
 	
-        double shrekMood = happinessValue/angerValue;
-        return shrekMood;
-    }
-} 
+        double shrekMood = Math.round(phrase.getHappinessValue()/phrase.getAngerValue());
+        return shrekMood; **/    
+}

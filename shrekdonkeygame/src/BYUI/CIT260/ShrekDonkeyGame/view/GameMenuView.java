@@ -30,9 +30,9 @@ public class GameMenuView extends View {
             case 'P': // Brings up the phrase menu.
                 this.displayPhraseMenu();
                 break;
-            case 'V': // Brings up the map.
+           /** case 'V': // Brings up the map.
                 this.displayMap();
-                break;
+                break;**/
             case 'K': // Brings up the kick menu.
                 this.displayKickMenu();
                 break;
@@ -68,9 +68,9 @@ public class GameMenuView extends View {
     //    GameMenuHelpView gameMenuHelpView = new GameMenuHelpView();
     //    gameMenuHelpView.display();
 
-    private void displayMap() {
+   /** private void displayMap() {
         Map.getLocations map.getLocations = new Map.getLocations();
         map.getLocations();
-    }
+    }**/
 
 }

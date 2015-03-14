@@ -7,7 +7,7 @@ import java.util.Objects;
 //disk or sent acrss the network
 public class Phrase implements Serializable{
     
-    public static PhraseList[] createPhraseList() {
+    /**public static PhraseList[] createPhraseList() {
         PhraseList[] onion = new PhraseList[15];
         
         PhraseList onion = new PhraseList();
@@ -46,7 +46,7 @@ public class Phrase implements Serializable{
         onion.setPhraseValue(2);
         phrase[0] = onion;
             
-                    }
+                    }**/
     
     //Class instance variables
     private String phraseType;
