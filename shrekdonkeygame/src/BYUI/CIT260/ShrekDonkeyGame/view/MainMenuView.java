@@ -37,12 +37,15 @@ public class MainMenuView extends View {
                 this.saveGame();
                 break;
             case 'E': //exit the program and never come back
-                break;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
+
                     return false;
         }
         return true;
+
+
     }
 
     private void startNewGame() {
@@ -65,7 +68,9 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("you know the drill");
+        // display the save game menu
+        SaveGameView saveMenu = new SaveGameView();
+        saveMenu.display();
     }
     
 }

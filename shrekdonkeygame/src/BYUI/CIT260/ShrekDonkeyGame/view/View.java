@@ -17,6 +17,7 @@ public abstract class View implements ViewInterface {
 
     @Override
     public void display() {
+
         String value;
         
         do {
@@ -26,6 +27,16 @@ public abstract class View implements ViewInterface {
             this.doAction(value); //get the first character of string
             
             } while (!value.equals('E')); //a selection is not Exit        
+
+        boolean done = false;
+        
+        do {
+            System.out.println(this.promptMessage); //displays the menu again
+            
+            value = this.getInput(); //get the user's selection
+            done = this.doAction(value);
+            } while (!done); //a selection is not Exit        
+
     }
     
     public String getInput() {

@@ -15,13 +15,13 @@ public class Map implements Serializable {
 
     public Map(int rowCount, int columnCount) {
         
+        this.rowCount = 5;
+        this.columnCount = 5;
+        
         if (rowCount < 1 || columnCount < 1) {
             System.out.println("The number of columns and rows must be > zero");
             return;
         }
-        
-        this.rowCount = rowCount;
-        this.columnCount = columnCount;
         
         //create a 2d array or Location objects
         this.locations = new Location[rowCount][columnCount];
@@ -86,7 +86,7 @@ public class Map implements Serializable {
         locations[0][4].setScene(scenes[SceneType.field.ordinal()]);
         
     }
-    /**public int getLocations(int[][] locations) {
+    /**public int getLocations(Location[][] locations) {
             
             System.out.println("MAP");
             System.out.println(" 1  2  3  4  5 ");
@@ -96,14 +96,14 @@ public class Map implements Serializable {
             
                     for (int j = 0; j < columnCount; j++) {
                         System.out.println(" | ");
-                        locations = locations[i][j];
-                            if(locations = "visited");
+                            if(Location = true);
                             System.out.println("V");
                             else System.out.println(" ?? ");
                     
                                 
                     }
                 }
+                
     }**/
     public Location[][] getLocations() {
         return locations;

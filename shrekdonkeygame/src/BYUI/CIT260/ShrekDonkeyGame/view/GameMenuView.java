@@ -40,12 +40,15 @@ public class GameMenuView extends View {
             //    this.displayHelpMenu();
             //    break;
             case 'E': // Goes back to the Main Menu.
+
                 return true;   
+
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
-                    break;
+                return false;
         }
         return true;
+
     }
 
     private void displayLocation() {
@@ -64,13 +67,18 @@ public class GameMenuView extends View {
         donkeyKickView.display();
     }
 
-    //private void displayHelpMenu() {
-    //    GameMenuHelpView gameMenuHelpView = new GameMenuHelpView();
-    //    gameMenuHelpView.display();
+    private void displayHelpMenu() {
+        GameMenuHelpView gameMenuHelpView = new GameMenuHelpView();
+        gameMenuHelpView.display();
 
-   /** private void displayMap() {
+
+    /**private void displayMap() {
         Map.getLocations map.getLocations = new Map.getLocations();
-        map.getLocations();
-    }**/
+        map.getLocations();**/
+    }
 
 }
+
+    
+    
+

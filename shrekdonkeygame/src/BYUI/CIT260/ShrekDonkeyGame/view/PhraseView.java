@@ -4,7 +4,9 @@ import BYUI.CIT260.ShrekDonkeyGame.control.ShrekStateControl;
 import BYUI.CIT260.ShrekDonkeyGame.model.Phrase;
 
 public class PhraseView extends View {
+
     private Phrase phrase;
+
     public PhraseView() {
         super("\n"
             +"\n-------------------------------------------------"
@@ -38,12 +40,19 @@ public class PhraseView extends View {
                 this.getPhraseFour();
                 break;
             case 'E': //go back to main menu
+
             return true;
+
+
             default: 
                 System.out.println("\n*** Invalid selection *** Try again");
-                    break;
+                return false; 
         }
+
         return true;
+
+
+
     }
 
     public void getPhraseOne(Phrase phrase) {

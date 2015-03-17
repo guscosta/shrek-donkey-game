@@ -7,49 +7,67 @@ import java.util.Objects;
 //disk or sent acrss the network
 public class Phrase implements Serializable{
     
-    /**public static PhraseList[] createPhraseList() {
-        PhraseList[] onion = new PhraseList[15];
+    public static Phrase[] createPhraseList() {
+        Phrase[] phrase = new Phrase[15];
         
-        PhraseList onion = new PhraseList();
+        Phrase onion = new Phrase();
         onion.setMessage("onions make people cry!");
         onion.setPhraseType('a');
-        onion.setPhraseValue(2);
         phrase[0] = onion;
         
-        PhraseList[] cake = new PhraseList();
+        Phrase cake = new Phrase();
         cake.setMessage("cakes have layers everybody loves cakes!");
         cake.setPhraseType('a');
         cake.setPhraseValue(1);
         phrase[1] = cake;
         
-        PhraseList[] friend = new PhraseList();
+        Phrase friend = new Phrase();
         friend.setMessage("but i'm your friend right?");
         friend.setPhraseType('h');
         friend.setPhraseValue(2);
         phrase[2] = friend;
         
-        PhraseList[] breath = new PhraseList();
+        Phrase breath = new Phrase();
         breath.setMessage("your breath smells like onions, does you breath have layers too?");
         breath.setPhraseType('a');
         breath.setPhraseValue(2);
         phrase[3] = breath;
         
-        PhraseList[] waffles = new PhraseList();
+        Phrase waffles = new Phrase();
         waffles.setMessage("and in the morning, i'll make you waffles!");
         waffles.setPhraseType('a');
         waffles.setPhraseValue(1);
         phrase[4] = onion;
         
-        PhraseList[]  = new PhraseList();
-        onion.setMessage("onions make people cry!");
-        onion.setPhraseType('a');
-        onion.setPhraseValue(2);
-        phrase[0] = onion;
-            
-                    }**/
+        Phrase green  = new Phrase();
+        green.setMessage("i like green its a pretty color.");
+        green.setPhraseType('h');
+        green.setPhraseValue(2);
+        phrase[5] = green;
+        
+        Phrase cliche  = new Phrase();
+        cliche.setMessage("you've got a friend in me.");
+        cliche.setPhraseType('h');
+        cliche.setPhraseValue(1);
+        phrase[6] = cliche;
+        
+        Phrase lemons  = new Phrase();
+        lemons.setMessage("when life gives you lemons you make key lemon pie.");
+        lemons.setPhraseType('a');
+        lemons.setPhraseValue(1);
+        phrase[7] = lemons;
+        
+        Phrase joke  = new Phrase();
+        joke.setMessage("what's the difference between a poodle and a doodle? scaboodle!");
+        joke.setPhraseType('h');
+        joke.setPhraseValue(2);
+        phrase[8] = joke;
+     
+        return phrase;
+    }
     
     //Class instance variables
-    private String phraseType;
+    private char phraseType;
     private String message;
     private double phraseValue;
     private double angerValue;
@@ -68,11 +86,11 @@ public class Phrase implements Serializable{
         this.actor = actor;
     }
 
-    public String getPhraseType() {
+    public char getPhraseType() {
         return phraseType;
     }
 
-    public void setPhraseType(String phraseType) {
+    public void setPhraseType(char phraseType) {
         this.phraseType = phraseType;
     }
 

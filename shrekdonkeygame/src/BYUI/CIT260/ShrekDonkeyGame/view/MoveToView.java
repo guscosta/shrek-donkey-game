@@ -26,8 +26,10 @@ public class MoveToView extends View{
             case 'E': //go back to main menu
                 return true;
             default: 
-                System.out.println("\n*** Invalid selection *** Try again");    
+    
                 break;
+
+
     }
     return false;
 }
