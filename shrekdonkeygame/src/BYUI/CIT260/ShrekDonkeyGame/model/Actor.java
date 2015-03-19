@@ -20,7 +20,14 @@ public enum Actor implements Serializable{
     
     Shrek("He is a big ogre who lives by himself and everyone fears him."),
     Donkey("He is a talking donkey who wants to be Shrek's friend."),
-    Fiona("She is a princess locked away in a tower guarded by a dragon.");
+    Fiona("She is a princess locked away in a tower guarded by a dragon."),
+    Gingy("He is a gingerbread man and one of Shrek´s friends."),
+    Pinochio("He is a kid that is made of wood. If he lies his nose wil grow."),
+    ThreeLittlePigs("These pigs can fight!"),
+    BigBadWolf("He likes to eat pigs and dress as a granda."),
+    ThreeBlindMice("These mice are blind.");
+    
+    
     
     private final String description;
     private final Point coordinates;
@@ -64,5 +71,15 @@ public enum Actor implements Serializable{
     
     public Point getCoordinates() {
         return coordinates;
+    }
+    
+    for (Actor actor : Actor.description()){
+        System.out.println(actor.getDescription());
+    }
+
+    private static class values {
+
+        public values() {
+        }
     }
 }

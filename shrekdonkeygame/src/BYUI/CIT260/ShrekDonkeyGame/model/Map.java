@@ -250,25 +250,26 @@ public class Map implements Serializable {
         locations[5][4].setScene(scenes[SceneType.field.ordinal()]);
         
     }
-    /**public int getLocations(Location[][] locations) {
+    public int getLocations(Location[][] locations) {
             
             System.out.println("MAP");
             System.out.println(" 1  2  3  4  5 ");
                 for (int i = 0; i < locations.length; i++) {
-                    System.out.println(" | ");
+                    System.out.println(" - ");
                     System.out.println(rowCount);
             
                     for (int j = 0; j < columnCount; j++) {
                         System.out.println(" | ");
-                            if(Location = true);
-                            System.out.println("V");
-                            else System.out.println(" ?? ");
-                    
-                                
+                            if(Location = true){
+                                System.out.println("V");
+                            }        
+                            else 
+                                System.out.println(" ?? ");{
+                            }
                     }
                 }
                 
-    }**/
+    }
     public Location[][] getLocations() {
         return locations;
     }
