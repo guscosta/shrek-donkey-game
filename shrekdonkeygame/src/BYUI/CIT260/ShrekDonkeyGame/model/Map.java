@@ -214,62 +214,8 @@ public class Map implements Serializable {
         return null;
     }
     
-    private static void assignScenesToLocations(Map map, RegularScene[] scenes) {
-        Location[][] locations = map.getLocations();
-        
-        //start point
-        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[0][1].setScene(scenes[SceneType.bonfire.ordinal()]);
-        locations[0][2].setScene(scenes[SceneType.castle.ordinal()]);
-        locations[0][3].setScene(scenes[SceneType.castle.ordinal()]);
-        locations[0][4].setScene(scenes[SceneType.castle.ordinal()]);
-        locations[1][0].setScene(scenes[SceneType.bonfire.ordinal()]);
-        locations[1][1].setScene(scenes[SceneType.stars.ordinal()]);
-        locations[1][2].setScene(scenes[SceneType.woods.ordinal()]);
-        locations[1][3].setScene(scenes[SceneType.woods.ordinal()]);
-        locations[1][4].setScene(scenes[SceneType.woods.ordinal()]);
-        locations[2][0].setScene(scenes[SceneType.arrow.ordinal()]);
-        locations[2][1].setScene(scenes[SceneType.woods.ordinal()]);
-        locations[2][2].setScene(scenes[SceneType.love.ordinal()]);
-        locations[2][3].setScene(scenes[SceneType.love.ordinal()]);
-        locations[2][4].setScene(scenes[SceneType.love.ordinal()]);
-        locations[3][0].setScene(scenes[SceneType.rats.ordinal()]);
-        locations[3][1].setScene(scenes[SceneType.rats.ordinal()]);
-        locations[3][2].setScene(scenes[SceneType.ogre.ordinal()]);
-        locations[3][3].setScene(scenes[SceneType.ogre.ordinal()]);
-        locations[3][4].setScene(scenes[SceneType.ogre.ordinal()]);
-        locations[4][0].setScene(scenes[SceneType.swamp.ordinal()]);
-        locations[4][1].setScene(scenes[SceneType.swamp.ordinal()]);
-        locations[4][2].setScene(scenes[SceneType.woods.ordinal()]);
-        locations[4][3].setScene(scenes[SceneType.field.ordinal()]);
-        locations[4][4].setScene(scenes[SceneType.field.ordinal()]);
-        locations[5][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[5][1].setScene(scenes[SceneType.woods.ordinal()]);
-        locations[5][2].setScene(scenes[SceneType.woods.ordinal()]);
-        locations[5][3].setScene(scenes[SceneType.field.ordinal()]);
-        locations[5][4].setScene(scenes[SceneType.field.ordinal()]);
-        
-    }
-    public int getLocations(Location[][] locations) {
-            
-            System.out.println("MAP");
-            System.out.println(" 1  2  3  4  5 ");
-                for (int i = 0; i < locations.length; i++) {
-                    System.out.println(" - ");
-                    System.out.println(rowCount);
-            
-                    for (int j = 0; j < columnCount; j++) {
-                        System.out.println(" | ");
-                            if(Location = true){
-                                System.out.println("V");
-                            }        
-                            else 
-                                System.out.println(" ?? ");{
-                            }
-                    }
-                }
-                
-    }
+    
+    
     public Location[][] getLocations() {
         return locations;
     }

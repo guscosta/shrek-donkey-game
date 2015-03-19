@@ -5,7 +5,10 @@
  */
 package BYUI.CIT260.ShrekDonkeyGame.control;
 
+import BYUI.CIT260.ShrekDonkeyGame.model.Game;
+import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 import BYUI.CIT260.ShrekDonkeyGame.model.Player;
+import shrekdonkeygame.Shrekdonkeygame;
 
 /**
  *
@@ -14,10 +17,6 @@ import BYUI.CIT260.ShrekDonkeyGame.model.Player;
 public class GameControl {
 
     public static void createNewGame(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**public static void createNewGame(Player player) {
         
         Game game = new Game(); //create new game
         Shrekdonkeygame.setCurrentGame(game); //save in shrek and donkey game
@@ -30,9 +29,5 @@ public class GameControl {
         MapControl.moveActorsToStartingLocation(map); //put actors on starting loc.
         
     }
-
-    static void assignScenesToLocations(Map map, RegularScene[] scenes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }**/
     
 }
