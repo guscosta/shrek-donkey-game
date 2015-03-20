@@ -77,7 +77,7 @@ public enum Actor implements Serializable {
         boolean flag = true;
         Actor temp;
 
-        while (flag) {
+        /**while (flag) {
             flag = false;
             for (i = 0; i < actors.length - 1; i++) {
                 for (j = i + 1; j < actors.length; j++) {
@@ -93,4 +93,5 @@ public enum Actor implements Serializable {
 
         }
     }
-}
+}**/
+

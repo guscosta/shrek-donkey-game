@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class PuzzleScene implements Serializable {
-    
+
     private String PuzzleName;
     private int Answer;
 
@@ -57,6 +57,5 @@ public class PuzzleScene implements Serializable {
         }
         return true;
     }
-    
-    
+
 }
