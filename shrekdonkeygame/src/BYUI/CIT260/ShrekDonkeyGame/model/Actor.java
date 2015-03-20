@@ -73,8 +73,15 @@ public enum Actor implements Serializable{
         return coordinates;
     }
     
-    for (Actor actor : Actor.description()){
-        System.out.println(actor.getDescription());
+    public static Actor[] sortActors(){
+    
+        Actor[] actors = Actor.values();
+        int j;
+        boolean flag = true;
+        String temp;
+        
+        
+        return actors;
     }
 
     private static class values {

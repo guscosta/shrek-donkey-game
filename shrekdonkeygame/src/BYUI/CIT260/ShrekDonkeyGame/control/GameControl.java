@@ -5,6 +5,7 @@
  */
 package BYUI.CIT260.ShrekDonkeyGame.control;
 
+import BYUI.CIT260.ShrekDonkeyGame.exceptions.MapControlException;
 import BYUI.CIT260.ShrekDonkeyGame.model.Game;
 import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 import BYUI.CIT260.ShrekDonkeyGame.model.Player;
@@ -16,7 +17,7 @@ import shrekdonkeygame.Shrekdonkeygame;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException {
         
         Game game = new Game(); //create new game
         Shrekdonkeygame.setCurrentGame(game); //save in shrek and donkey game

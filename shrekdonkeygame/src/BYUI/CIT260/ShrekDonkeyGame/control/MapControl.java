@@ -5,6 +5,7 @@ import BYUI.CIT260.ShrekDonkeyGame.model.Actor;
 import BYUI.CIT260.ShrekDonkeyGame.model.Location;
 import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 import BYUI.CIT260.ShrekDonkeyGame.model.RegularScene;
+import java.awt.Point;
 import shrekdonkeygame.Shrekdonkeygame;
 
 public class MapControl {
@@ -20,10 +21,10 @@ public class MapControl {
         assignScenesToLocations(map, scenes);
         return map;
     }
-    
+
     private static void assignScenesToLocations(Map map, RegularScene[] scenes) {
         Location[][] locations = map.getLocations();
-        
+
         //start point
         locations[0][0].setScene(scenes[RegularScene.SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[RegularScene.SceneType.bonfire.ordinal()]);
@@ -55,21 +56,18 @@ public class MapControl {
         locations[5][2].setScene(scenes[RegularScene.SceneType.woods.ordinal()]);
         locations[5][3].setScene(scenes[RegularScene.SceneType.field.ordinal()]);
         locations[5][4].setScene(scenes[RegularScene.SceneType.field.ordinal()]);
-        
+
     }
 
-    static void moveActorsToStartingLocation(Map map) {
+    public static void moveActorsToStartingLocation(Map map)
+                            throws MapControlException {
         // for every actor
         Actor[] actors = Actor.values();
 
         for (Actor actor : actors) {
             Point coordinates = actor.getCoordinates();
-            int returnValue = MapControl.moveActorToLocation(actor, coordinates);
-            if (returnValue < 0) {
-                return returnValue;
-            }
+            MapControl.moveActorToLocation(actor, coordinates);
         }
-        return 0;
     }
 
     public static void moveActorToLocation(Actor actor, Point coordinates)
