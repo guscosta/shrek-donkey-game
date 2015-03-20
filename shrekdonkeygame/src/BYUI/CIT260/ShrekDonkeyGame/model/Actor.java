@@ -7,17 +7,16 @@ package BYUI.CIT260.ShrekDonkeyGame.model;
 
 import java.awt.Point;
 import java.io.Serializable;
+
 /**
  *
  * @author hecto_000
  */
-
-    
 // Allows that all of the data stored in class instance variables in a class
 // to be translated into a format so that it can be stored on disk or sent
 // across the network
-public enum Actor implements Serializable{
-    
+public enum Actor implements Serializable {
+
     Shrek("He is a big ogre who lives by himself and everyone fears him."),
     Donkey("He is a talking donkey who wants to be Shrek's friend."),
     Fiona("She is a princess locked away in a tower guarded by a dragon."),
@@ -26,9 +25,7 @@ public enum Actor implements Serializable{
     ThreeLittlePigs("These pigs can fight!"),
     BigBadWolf("He likes to eat pigs and dress as a granda."),
     ThreeBlindMice("These mice are blind.");
-    
-    
-    
+
     private final String description;
     private final Point coordinates;
 
@@ -38,7 +35,7 @@ public enum Actor implements Serializable{
 
     Actor(String description) {
         this.description = description;
-        coordinates = new Point(1,1);
+        coordinates = new Point(1, 1);
     }
 
     public Location getLocation() {
@@ -63,30 +60,37 @@ public enum Actor implements Serializable{
 
     public void setPhrase(String[] phrase) {
         this.phrase = phrase;
-    }  
-    
+    }
+
     public String getDescription() {
         return description;
     }
-    
+
     public Point getCoordinates() {
         return coordinates;
     }
-    
-    public static Actor[] sortActors(){
-    
+
+    public static Actor[] sortActors() {
+
         Actor[] actors = Actor.values();
-        int j;
+        int i, j;
         boolean flag = true;
-        String temp;
-        
-        
-        return actors;
-    }
+        Actor temp;
 
-    private static class values {
+        while (flag) {
+            flag = false;
+            for (i = 0; i < actors.length - 1; i++) {
+                for (j = i + 1; j < actors.length; j++) {
+                    if (actors[i].compareToIgnoreCase(actors[j + 1]) > 0) {
+                        temp = actors[j];
+                        actors[j] = actors[j + 1];
+                        actors[j + 1] = temp;
+                        flag = true;
+                    }
+                }
+            }
+            return actors;
 
-        public values() {
         }
     }
 }
