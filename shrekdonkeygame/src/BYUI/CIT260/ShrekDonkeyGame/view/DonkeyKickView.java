@@ -6,6 +6,9 @@
 package BYUI.CIT260.ShrekDonkeyGame.view;
 
 import BYUI.CIT260.ShrekDonkeyGame.control.DonkeyKickControl;
+import BYUI.CIT260.ShrekDonkeyGame.exceptions.DonkeyKickControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,7 +39,12 @@ public class DonkeyKickView extends View {
             System.out.println("Enter a value from 1 to 33 for kick speed");
             return false;
         }
-        double force = DonkeyKickControl.calcKick(this.enemyWeight, kickSpeed);
+        double force = 0;
+        try {
+            force = DonkeyKickControl.calcKick(this.enemyWeight, kickSpeed);
+        } catch (DonkeyKickControlException de) {
+            System.out.println(de.getMessage());
+        }
         // Call the enemyDefeated function to determine if the enemy was defeated
         boolean defeated = DonkeyKickControl.enemyDefeated(force, this.enemyWeight);
         // If enemy was defeated display positive message
