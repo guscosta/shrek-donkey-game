@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Phrase implements Serializable{
     
     public static Phrase[] createPhraseList() {
-        Phrase[] phrase = new Phrase[15];
+        Phrase[] phrase = new Phrase[10];
         
         Phrase onion = new Phrase();
         onion.setMessage("onions make people cry!");
