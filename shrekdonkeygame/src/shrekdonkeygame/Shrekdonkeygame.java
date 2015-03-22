@@ -20,10 +20,10 @@ public class Shrekdonkeygame {
 
     public static void main(String[] args) {
 
-        StartProgramView startProgramView = new StartProgramView();
+        StartProgramView startProgram = new StartProgramView();
         try {
             //create StartProgramView and start the program
-            startProgramView.startProgram();
+            startProgram.startProgram();
         } catch (Throwable te) {
             System.out.println(te.getMessage());
             te.printStackTrace();

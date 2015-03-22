@@ -1,6 +1,7 @@
 package BYUI.CIT260.ShrekDonkeyGame.view;
 
 import BYUI.CIT260.ShrekDonkeyGame.control.GameControl;
+import BYUI.CIT260.ShrekDonkeyGame.exceptions.MapControlException;
 import shrekdonkeygame.Shrekdonkeygame;
 
 public class MainMenuView extends View {
@@ -50,8 +51,11 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         //create a new game
+        try{
         GameControl.createNewGame(Shrekdonkeygame.getPlayer());
-        
+        } catch (MapControlException me) {
+            System.out.println(me.getMessage());
+        }
         // display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();

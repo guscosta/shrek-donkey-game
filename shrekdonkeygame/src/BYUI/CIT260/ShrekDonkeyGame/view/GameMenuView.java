@@ -1,5 +1,6 @@
 package BYUI.CIT260.ShrekDonkeyGame.view;
 
+import BYUI.CIT260.ShrekDonkeyGame.exceptions.GameMenuViewException;
 import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 
 public class GameMenuView extends View {
@@ -18,7 +19,8 @@ public class GameMenuView extends View {
             +"\n----------------------------------------");
     }
     @Override
-    public boolean doAction(Object obj) {
+    public boolean doAction(Object obj)
+            throws GameMenuViewException{
         
         String value = (String) obj;
         char choice = value.toUpperCase().charAt(0); 
@@ -45,7 +47,9 @@ public class GameMenuView extends View {
 
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
-                return false;
+                throw new GameMenuViewException("Your command cannot be processed"
+                                              + " because you did not enter a"
+                                              + " correct character");
         }
         return true;
 
