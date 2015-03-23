@@ -5,26 +5,26 @@ import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 
 public class GameMenuView extends View {
 
-    public GameMenuView(){
+    public GameMenuView() {
         super("\n"
-            +"\n----------------------------------------"
-            +"\n| Game Menu                            |"
-            +"\n----------------------------------------"
-            +"\nM - Move to a new location"
-            +"\nP - Use a Donkey phrase"
-            +"\nK - Use a donkey kick"
-            +"\nV - View map"
-            //+"\nH - Help"
-            +"\nE - Go back to main menu"
-            +"\n----------------------------------------");
+                + "\n----------------------------------------"
+                + "\n| Game Menu                            |"
+                + "\n----------------------------------------"
+                + "\nM - Move to a new location"
+                + "\nP - Use a Donkey phrase"
+                + "\nK - Use a donkey kick"
+                + "\nV - View map"
+                //+"\nH - Help"
+                + "\nE - Go back to main menu"
+                + "\n----------------------------------------");
     }
+
     @Override
-    public boolean doAction(Object obj)
-            throws GameMenuViewException{
-        
+    public boolean doAction(Object obj) {
+
         String value = (String) obj;
-        char choice = value.toUpperCase().charAt(0); 
-        
+        char choice = value.toUpperCase().charAt(0);
+        try{
         switch (choice) {
             case 'M': //Brings up the move to location menu.
                 this.displayLocation();
@@ -32,9 +32,10 @@ public class GameMenuView extends View {
             case 'P': // Brings up the phrase menu.
                 this.displayPhraseMenu();
                 break;
-           /** case 'V': // Brings up the map.
-                this.displayMap();
-                break;**/
+            /**
+             * case 'V': // Brings up the map. this.displayMap();
+                break;*
+             */
             case 'K': // Brings up the kick menu.
                 this.displayKickMenu();
                 break;
@@ -43,14 +44,19 @@ public class GameMenuView extends View {
             //    break;
             case 'E': // Goes back to the Main Menu.
 
-                return true;   
+                return true;
 
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 throw new GameMenuViewException("Your command cannot be processed"
-                                              + " because you did not enter a"
-                                              + " correct character");
+                        + " because you did not enter a"
+                        + " correct character");
         }
+        }
+        catch (GameMenuViewException ge) {
+            System.out.println(ge.getMessage());
+        }
+        
         return true;
 
     }
@@ -58,7 +64,7 @@ public class GameMenuView extends View {
     private void displayLocation() {
         MoveToView moveToView = new MoveToView();
         moveToView.display();
-    
+
     }
 
     private void displayPhraseMenu() {
@@ -71,18 +77,13 @@ public class GameMenuView extends View {
         donkeyKickView.display();
     }
 
-    private void displayHelpMenu() {
+  /**  private void displayHelpMenu() {
         GameMenuHelpView gameMenuHelpView = new GameMenuHelpView();
         gameMenuHelpView.display();
 
-
-    /**private void displayMap() {
-        Map.getLocations map.getLocations = new Map.getLocations();
-        map.getLocations();**/
+        /**
+         * private void displayMap() { Map.getLocations map.getLocations = new
+         * Map.getLocations();
+        map.getLocations();*
+         */
     }
-
-}
-
-    
-    
-
