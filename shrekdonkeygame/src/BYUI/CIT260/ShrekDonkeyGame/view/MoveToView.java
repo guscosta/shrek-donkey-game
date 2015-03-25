@@ -18,10 +18,10 @@ public class MoveToView extends View {
 
     @Override
     public boolean doAction(Object obj) {
-     //   Actor actor = null;
-     //   try {
-     //     MapControl.moveActorToLocation(actor, Actor.);
-     //   }
+        //   Actor actor = null;
+        //   try {
+        //     MapControl.moveActorToLocation(actor, Actor.);
+        //   }
         String value = (String) obj;
         char choice = value.toUpperCase().charAt(0);
 
@@ -43,23 +43,25 @@ public class MoveToView extends View {
 
         boolean valid = false; //indicate if the input has been retrieved
         String input = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+        try {
+            while (!valid) { //while a valid input has not been retrieved
 
-        while (!valid) { //while a valid input has not been retrieved
+                //prompt for the player's choice
+                System.out.println("Enter a value:");
 
-            //prompt for the player's choice
-            System.out.println("Enter a value:");
+                //get the input from the keyboard and trim off the blanks
+                input = this.keyboard.readLine();
+                input = input.trim();
 
-            //get the input from the keyboard and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-
-            //if the name is invalid (less than 2 characters in length)
-            if (input.length() < 1) {
-                System.out.println("Press a button");
-                continue; //and repeat again
+                //if the name is invalid (less than 2 characters in length)
+                if (input.length() < 1) {
+                    System.out.println("Press a button");
+                    continue; //and repeat again
+                }
             }
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
         }
+
     }
-    
 }
