@@ -5,6 +5,7 @@
  */
 package BYUI.CIT260.ShrekDonkeyGame.control;
 
+import BYUI.CIT260.ShrekDonkeyGame.exceptions.DonkeyKickControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class DonkeyKickControlTest {
      * Test of calcKick method, of class DonkeyKickControl.
      */
     @Test
-    public void testCalcKick() {
+    public void testCalcKick() throws DonkeyKickControlException {
         System.out.println("calcKick");
         /*******************
          * Test Case 1

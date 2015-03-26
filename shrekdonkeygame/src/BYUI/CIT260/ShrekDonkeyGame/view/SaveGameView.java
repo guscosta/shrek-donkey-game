@@ -37,7 +37,8 @@ public class SaveGameView extends View{
             case 'E':
                 return true;
             default: 
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 return false;
     }
     return false;
@@ -45,6 +46,6 @@ public class SaveGameView extends View{
 }
 
     private void saveGame() {
-        System.out.println("Your game has been saved succesfully.");
+        this.console.println("Your game has been saved succesfully.");
     }
 }

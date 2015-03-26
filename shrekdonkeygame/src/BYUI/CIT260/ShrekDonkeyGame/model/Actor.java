@@ -69,14 +69,15 @@ public enum Actor implements Serializable {
     public Point getCoordinates() {
         return coordinates;
     }
+}
 
-    public static Actor[] sortActors() {
+  /**  public static Actor[] sortActors() {
 
         Actor[] actors = Actor.values();
         int i, j;
         boolean flag = true;
         Actor temp;
-
+**/
         /**while (flag) {
             flag = false;
             for (i = 0; i < actors.length - 1; i++) {

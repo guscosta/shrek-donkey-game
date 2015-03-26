@@ -5,25 +5,26 @@ import BYUI.CIT260.ShrekDonkeyGame.exceptions.MapControlException;
 import shrekdonkeygame.Shrekdonkeygame;
 
 public class MainMenuView extends View {
-    
-     public MainMenuView(){
+
+    public MainMenuView() {
         super("\n"
-            +"\n----------------------------------------"
-            +"\n| Main Menu                            |"
-            +"\n----------------------------------------"
-            +"\nG - Start game"
-            +"\nS - Save the game"
-            +"\nL - Load a saved game"
-            +"\nH - Get help on how to play the game"
-            +"\nE - Exit"
-            +"\n----------------------------------------");
-     }
+                + "\n----------------------------------------"
+                + "\n| Main Menu                            |"
+                + "\n----------------------------------------"
+                + "\nG - Start game"
+                + "\nS - Save the game"
+                + "\nL - Load a saved game"
+                + "\nH - Get help on how to play the game"
+                + "\nE - Exit"
+                + "\n----------------------------------------");
+    }
+
     @Override
     public boolean doAction(Object obj) {
-        
+
         String value = (String) obj;
-        char choice = value.toUpperCase().charAt(0); 
-        
+        char choice = value.toUpperCase().charAt(0);
+
         switch (choice) {
             case 'G': //create and start a new game
                 this.startNewGame();
@@ -40,21 +41,21 @@ public class MainMenuView extends View {
             case 'E': //exit the program and never come back
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
 
-                    return false;
+                return false;
         }
         return true;
-
 
     }
 
     private void startNewGame() {
         //create a new game
-        try{
-        GameControl.createNewGame(Shrekdonkeygame.getPlayer());
+        try {
+            GameControl.createNewGame(Shrekdonkeygame.getPlayer());
         } catch (MapControlException me) {
-            System.out.println(me.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    me.getMessage());
         }
         // display the game menu
         GameMenuView gameMenu = new GameMenuView();
@@ -62,7 +63,7 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("this thing is also working");
+        this.console.println("this thing is also working");
     }
 
     private void displayHelpMenu() {
@@ -76,6 +77,5 @@ public class MainMenuView extends View {
         SaveGameView saveMenu = new SaveGameView();
         saveMenu.display();
     }
-    
-}
 
+}

@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import shrekdonkeygame.Shrekdonkeygame;
 import BYUI.CIT260.ShrekDonkeyGame.model.RegularScene.SceneType;
+import BYUI.CIT260.ShrekDonkeyGame.view.ErrorView;
 
 public class Map implements Serializable {
     
@@ -19,7 +20,8 @@ public class Map implements Serializable {
         this.columnCount = 5;
         
         if (rowCount < 1 || columnCount < 1) {
-            System.out.println("The number of columns and rows must be > zero");
+            ErrorView.display(this.getClass().getName(),
+                    "The number of columns and rows must be > zero");
             return;
         }
         

@@ -23,10 +23,10 @@ public class StartProgramView extends View {
     }
 
     public void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n============================================");
-        System.out.println("\twelcome to the jungle " + player.getName());
-        System.out.println("\twe got fun and games!");
-        System.out.println("==============================================");
+        this.console.println("\n\n============================================");
+        this.console.println("\twelcome to the jungle " + player.getName());
+        this.console.println("\twe got fun and games!");
+        this.console.println("==============================================");
     }
 
     @Override

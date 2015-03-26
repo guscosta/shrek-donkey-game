@@ -24,39 +24,39 @@ public class GameMenuView extends View {
 
         String value = (String) obj;
         char choice = value.toUpperCase().charAt(0);
-        try{
-        switch (choice) {
-            case 'M': //Brings up the move to location menu.
-                this.displayLocation();
-                break;
-            case 'P': // Brings up the phrase menu.
-                this.displayPhraseMenu();
-                break;
-            /**
-             * case 'V': // Brings up the map. this.displayMap();
-                break;*
-             */
-            case 'K': // Brings up the kick menu.
-                this.displayKickMenu();
-                break;
+        try {
+            switch (choice) {
+                case 'M': //Brings up the move to location menu.
+                    this.displayLocation();
+                    break;
+                case 'P': // Brings up the phrase menu.
+                    this.displayPhraseMenu();
+                    break;
+                /**
+                 * case 'V': // Brings up the map. this.displayMap(); break;*
+                 */
+                case 'K': // Brings up the kick menu.
+                    this.displayKickMenu();
+                    break;
             //case 'H': // Brings up the help menu.
-            //    this.displayHelpMenu();
-            //    break;
-            case 'E': // Goes back to the Main Menu.
+                //    this.displayHelpMenu();
+                //    break;
+                case 'E': // Goes back to the Main Menu.
 
-                return true;
+                    return true;
 
-            default:
-                System.out.println("\n*** Invalid selection *** Try again");
-                throw new GameMenuViewException("Your command cannot be processed"
-                        + " because you did not enter a"
-                        + " correct character");
+                default:
+                    ErrorView.display(this.getClass().getName(),
+                            "\n*** Invalid selection *** Try again");
+                    throw new GameMenuViewException("Your command cannot be processed"
+                            + " because you did not enter a"
+                            + " correct character");
+            }
+        } catch (GameMenuViewException ge) {
+            ErrorView.display(this.getClass().getName(),
+                    ge.getMessage());
         }
-        }
-        catch (GameMenuViewException ge) {
-            System.out.println(ge.getMessage());
-        }
-        
+
         return true;
 
     }
@@ -77,13 +77,12 @@ public class GameMenuView extends View {
         donkeyKickView.display();
     }
 
-  /**  private void displayHelpMenu() {
-        GameMenuHelpView gameMenuHelpView = new GameMenuHelpView();
-        gameMenuHelpView.display();
-
-        /**
-         * private void displayMap() { Map.getLocations map.getLocations = new
-         * Map.getLocations();
-        map.getLocations();*
-         */
-    }
+    /**
+     * private void displayHelpMenu() { GameMenuHelpView gameMenuHelpView = new
+     * GameMenuHelpView(); gameMenuHelpView.display();
+     *
+     * /**
+     * private void displayMap() { Map.getLocations map.getLocations = new
+     * Map.getLocations(); map.getLocations();*
+     */
+}

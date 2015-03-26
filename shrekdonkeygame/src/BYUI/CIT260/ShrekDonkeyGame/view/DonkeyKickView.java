@@ -32,27 +32,30 @@ public class DonkeyKickView extends View {
 
         } catch (NumberFormatException nf) {
 
-            System.out.println("\nYou must enter a valid number."
+            ErrorView.display(this.getClass().getName(),
+                    "\nYou must enter a valid number."
                     + " Try again or enter Q to quit.");
         }
         if (kickSpeed <= 0 || kickSpeed > 33) {
-            System.out.println("Enter a value from 1 to 33 for kick speed");
+            ErrorView.display(this.getClass().getName(),
+                    "Enter a value from 1 to 33 for kick speed");
             return false;
         }
         double force = 0;
         try {
             force = DonkeyKickControl.calcKick(this.enemyWeight, kickSpeed);
         } catch (DonkeyKickControlException de) {
-            System.out.println(de.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    de.getMessage());
         }
         // Call the enemyDefeated function to determine if the enemy was defeated
         boolean defeated = DonkeyKickControl.enemyDefeated(force, this.enemyWeight);
         // If enemy was defeated display positive message
         if (defeated == true) {
-            System.out.println("You have defeated your enemy!");
+            this.console.println("You have defeated your enemy!");
         } else {
             // Else if he was not display negative message and let user enter another value.
-            System.out.println("You have another chance to enter a kick speed.");
+            this.console.println("You have another chance to enter a kick speed.");
             MainMenuView mainMenuTwo = new MainMenuView();
             mainMenuTwo.display();
         }

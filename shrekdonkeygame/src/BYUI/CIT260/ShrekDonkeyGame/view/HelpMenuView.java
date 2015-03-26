@@ -48,26 +48,26 @@ public class HelpMenuView extends View{
     }
 
     private void getPurpose() {
-        System.out.println("this works");
+        this.console.println("this works");
     }
 
     private void getMoveHow() {
-        System.out.println("this works too");    
+        this.console.println("this works too");    
     }
 
     private void getAnnoying() {
-        System.out.println("this works as well");
+        this.console.println("this works as well");
     }
 
     private void getFriendly() {
-        System.out.println("the meaning of life is 42");
+        this.console.println("the meaning of life is 42");
     }
 
     private void getPuzzle() {
-        System.out.println("riddle me this batman");
+        this.console.println("riddle me this batman");
     }
 
     private void getKick() {
-        System.out.println("imma kick you in the face");
+        this.console.println("imma kick you in the face");
     }
 }

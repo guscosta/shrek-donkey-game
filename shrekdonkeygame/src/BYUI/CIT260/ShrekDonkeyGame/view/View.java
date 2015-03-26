@@ -27,8 +27,7 @@ public abstract class View implements ViewInterface {
         String value;
 
         do {
-            System.out.println(this.promptMessage); //displays the menu again
-
+            this.console.println(this.promptMessage); //displays the menu again
             value = this.getInput(); //get the user's selection
             this.doAction(value); //get the first character of string
 
@@ -37,7 +36,7 @@ public abstract class View implements ViewInterface {
         boolean done = false;
 
         do {
-            System.out.println(this.promptMessage); //displays the menu again
+            this.console.println(this.promptMessage); //displays the menu again
 
             value = this.getInput(); //get the user's selection
             done = this.doAction(value);
@@ -53,7 +52,7 @@ public abstract class View implements ViewInterface {
             while (!valid) {
 
                 //prompt for the player's choice
-                System.out.println("\t\nEnter your selection below:");
+                this.console.println("\t\nEnter your selection below:");
 
                 //get the input from the keyboard and trim off the blanks
                 selection = this.keyboard.readLine();
@@ -61,13 +60,15 @@ public abstract class View implements ViewInterface {
 
                 //if the name is invalid (less than 2 characters in length)
                 if (selection.length() < 1) {
-                    System.out.println("\n*** Invalid selection *** Try again");
+                    ErrorView.display(this.getClass().getName(),
+                            "\n*** Invalid selection *** Try again");
                     continue; //and repeat again
                 }
                 break; //out of the (exit) the repetition
             }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
         }
         return selection; //return the input
 

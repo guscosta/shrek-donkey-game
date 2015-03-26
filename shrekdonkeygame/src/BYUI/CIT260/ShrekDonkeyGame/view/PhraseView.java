@@ -45,7 +45,8 @@ public class PhraseView extends View {
 
 
             default: 
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 return false; 
         }
 
@@ -56,21 +57,21 @@ public class PhraseView extends View {
     }
 
     public void getPhraseOne(Phrase phrase) {
-        System.out.println("you have successfully annoyed shrek!");
+        this.console.println("you have successfully annoyed shrek!");
         ShrekStateControl.calcShrekState(phrase);
              
     }
 
     private void getPhraseTwo() {
-        System.out.println("you have successfully annoyed shrek AND he slapped you in the face");
+        this.console.println("you have successfully annoyed shrek AND he slapped you in the face");
     }
 
     private void getPhraseThree() {
-        System.out.println("somehow shrek feels nicer around you");
+        this.console.println("somehow shrek feels nicer around you");
     }
 
     private void getPhraseFour() {
-        System.out.println("shrek kinda likes what youre saying");
+        this.console.println("shrek kinda likes what youre saying");
     }
 
 }

@@ -47,7 +47,7 @@ public class MoveToView extends View {
             while (!valid) { //while a valid input has not been retrieved
 
                 //prompt for the player's choice
-                System.out.println("Enter a value:");
+                this.console.println("Enter a value:");
 
                 //get the input from the keyboard and trim off the blanks
                 input = this.keyboard.readLine();
@@ -55,12 +55,14 @@ public class MoveToView extends View {
 
                 //if the name is invalid (less than 2 characters in length)
                 if (input.length() < 1) {
-                    System.out.println("Press a button");
+                    ErrorView.display(this.getClass().getName(),
+                            "Press a button");
                     continue; //and repeat again
                 }
             }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
         }
 
     }

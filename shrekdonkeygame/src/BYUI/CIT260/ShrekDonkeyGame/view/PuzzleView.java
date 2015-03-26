@@ -34,17 +34,18 @@ public class PuzzleView extends View {
             case 'E': // Goes back to the Main Menu.
                 return true;   
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                     break;
         }
         return true;
     }
 
     private void displayPuzzleIn() {
-        System.out.println("this will display the puzzle calculation input");
+        this.console.println("this will display the puzzle calculation input");
     }
 
     private void displayNegative() {
-        System.out.println("you can't turn back now the dragon will eat you!");
+        this.console.println("you can't turn back now the dragon will eat you!");
     }
 }
