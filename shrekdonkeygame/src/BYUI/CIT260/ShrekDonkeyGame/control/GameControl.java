@@ -5,10 +5,14 @@
  */
 package BYUI.CIT260.ShrekDonkeyGame.control;
 
+import BYUI.CIT260.ShrekDonkeyGame.exceptions.GameControlException;
 import BYUI.CIT260.ShrekDonkeyGame.exceptions.MapControlException;
 import BYUI.CIT260.ShrekDonkeyGame.model.Game;
 import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 import BYUI.CIT260.ShrekDonkeyGame.model.Player;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import shrekdonkeygame.Shrekdonkeygame;
 
 /**
@@ -29,6 +33,18 @@ public class GameControl {
         
         MapControl.moveActorsToStartingLocation(map); //put actors on starting loc.
         
+    }
+
+    public static void saveGame(Game currentGame, String filepath)
+            throws GameControlException {
+     try( FileOutputStream fops = new FileOutputStream(filepath)) {
+         ObjectOutputStream output = new ObjectOutputStream(fops);
+         
+         output.writeObject(game); // write the game object out to file
+    }
+     catch(IOException e) {
+         throw new GameControlException(e.getMessage());
+     }
     }
     
 }

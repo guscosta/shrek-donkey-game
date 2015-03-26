@@ -5,6 +5,9 @@
  */
 package BYUI.CIT260.ShrekDonkeyGame.view;
 
+import BYUI.CIT260.ShrekDonkeyGame.control.GameControl;
+import shrekdonkeygame.Shrekdonkeygame;
+
 /**
  *
  * @author hecto_000
@@ -46,6 +49,15 @@ public class SaveGameView extends View{
 }
 
     private void saveGame() {
-        this.console.println("Your game has been saved succesfully.");
+        this.console.println("\n\nEnter the file path for file where the game "
+                             + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            // save the game to the specified file
+            GameControl.saveGame(Shrekdonkeygame.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("SaveGameView", ex.getMessage());
+        }
     }
 }
