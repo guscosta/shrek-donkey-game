@@ -16,9 +16,6 @@ public class Map implements Serializable {
 
     public Map(int rowCount, int columnCount) {
         
-        this.rowCount = 5;
-        this.columnCount = 5;
-        
         if (rowCount < 1 || columnCount < 1) {
             ErrorView.display(this.getClass().getName(),
                     "The number of columns and rows must be > zero");
@@ -215,9 +212,7 @@ public class Map implements Serializable {
         scenes[SceneType.finish.ordinal()] = finishScene;
         return null;
     }
-    
-    
-    
+  
     public Location[][] getLocations() {
         return locations;
     }

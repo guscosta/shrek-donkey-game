@@ -51,12 +51,6 @@ public class MapControl {
         locations[4][2].setScene(scenes[RegularScene.SceneType.woods.ordinal()]);
         locations[4][3].setScene(scenes[RegularScene.SceneType.field.ordinal()]);
         locations[4][4].setScene(scenes[RegularScene.SceneType.field.ordinal()]);
-        locations[5][0].setScene(scenes[RegularScene.SceneType.start.ordinal()]);
-        locations[5][1].setScene(scenes[RegularScene.SceneType.woods.ordinal()]);
-        locations[5][2].setScene(scenes[RegularScene.SceneType.woods.ordinal()]);
-        locations[5][3].setScene(scenes[RegularScene.SceneType.field.ordinal()]);
-        locations[5][4].setScene(scenes[RegularScene.SceneType.field.ordinal()]);
-
     }
 
     public static void moveActorsToStartingLocation(Map map)
