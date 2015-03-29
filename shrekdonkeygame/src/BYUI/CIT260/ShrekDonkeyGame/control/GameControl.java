@@ -7,6 +7,7 @@ package BYUI.CIT260.ShrekDonkeyGame.control;
 
 import BYUI.CIT260.ShrekDonkeyGame.exceptions.GameControlException;
 import BYUI.CIT260.ShrekDonkeyGame.exceptions.MapControlException;
+import BYUI.CIT260.ShrekDonkeyGame.model.Actor;
 import BYUI.CIT260.ShrekDonkeyGame.model.Game;
 import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 import BYUI.CIT260.ShrekDonkeyGame.model.Player;
@@ -65,5 +66,22 @@ public class GameControl {
 
         // close the output file
         Shrekdonkeygame.setCurrentGame(game); // save in Shrekdonkeygame
+    }
+
+    public static void printActors(Actor[] values, String filePath)
+            throws GameControlException {
+
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            for (Actor characters : values)
+            output.writeObject("Actors          Description          Location" 
+                             + "\n" + characters + ":          " 
+                             + characters.getDescription()
+                             + characters.getCoordinates());
+        }
+        catch(IOException e) {
+            throw new GameControlException(e.getMessage());
+        }
     }
 }

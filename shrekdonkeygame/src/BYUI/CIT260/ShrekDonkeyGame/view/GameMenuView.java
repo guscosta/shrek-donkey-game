@@ -1,6 +1,8 @@
 package BYUI.CIT260.ShrekDonkeyGame.view;
 
+import BYUI.CIT260.ShrekDonkeyGame.control.GameControl;
 import BYUI.CIT260.ShrekDonkeyGame.exceptions.GameMenuViewException;
+import BYUI.CIT260.ShrekDonkeyGame.model.Actor;
 import BYUI.CIT260.ShrekDonkeyGame.model.Map;
 
 public class GameMenuView extends View {
@@ -14,7 +16,7 @@ public class GameMenuView extends View {
                 + "\nP - Use a Donkey phrase"
                 + "\nK - Use a donkey kick"
                 + "\nV - View map"
-                //+"\nH - Help"
+                + "\nR - Print character List"
                 + "\nE - Go back to main menu"
                 + "\n----------------------------------------");
     }
@@ -38,9 +40,9 @@ public class GameMenuView extends View {
                 case 'K': // Brings up the kick menu.
                     this.displayKickMenu();
                     break;
-            //case 'H': // Brings up the help menu.
-                //    this.displayHelpMenu();
-                //    break;
+                case 'R': // Prints the character list
+                    this.printActors();
+                    break;
                 case 'E': // Goes back to the Main Menu.
 
                     return true;
@@ -80,6 +82,21 @@ public class GameMenuView extends View {
     private void displayMap() { 
         Map mapLocations = new Map(5,5);
         mapLocations.getLocations();
+    }
+
+    private void printActors() {
+        this.console.println("\n\nEtner the file path for file where the game "
+                             + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            // Print the actors to the specified file
+            GameControl.printActors(Actor.values(), filePath);
+            this.console.println("\n\nThe character list has been printed to "
+                                 + "the specified file.");
+        } catch (Exception ex) {
+            ErrorView.display("GameMenuView", ex.getMessage());
+        }
     }
      
 }

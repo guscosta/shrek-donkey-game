@@ -21,7 +21,7 @@ public enum Actor implements Serializable {
     Donkey("He is a talking donkey who wants to be Shrek's friend."),
     Fiona("She is a princess locked away in a tower guarded by a dragon."),
     Gingy("He is a gingerbread man and one of Shrek´s friends."),
-    Pinochio("He is a kid that is made of wood. If he lies his nose wil grow."),
+    Pinocchio("He is a kid that is made of wood. If he lies his nose wil grow."),
     ThreeLittlePigs("These pigs can fight!"),
     BigBadWolf("He likes to eat pigs and dress as a granda."),
     ThreeBlindMice("These mice are blind.");
@@ -35,7 +35,7 @@ public enum Actor implements Serializable {
 
     Actor(String description) {
         this.description = description;
-        coordinates = new Point(1, 1);
+        coordinates = new Point(0, 0);
     }
 
     public Location getLocation() {
