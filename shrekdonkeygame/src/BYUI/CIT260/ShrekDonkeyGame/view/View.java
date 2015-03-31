@@ -29,18 +29,18 @@ public abstract class View implements ViewInterface {
         do {
             this.console.println(this.promptMessage); //displays the menu again
             value = this.getInput(); //get the user's selection
+            value = value.toUpperCase();
             this.doAction(value); //get the first character of string
-
-        } while (!value.equals('E')); //a selection is not Exit        
+        } while (!value.equals("E")); //a selection is not Exit        
 
         boolean done = false;
-
-        do {
-            this.console.println(this.promptMessage); //displays the menu again
-
-            value = this.getInput(); //get the user's selection
-            done = this.doAction(value);
-        } while (!done); //a selection is not Exit        
+//
+//        do {
+//            this.console.println(this.promptMessage); //displays the menu again
+//
+//            value = this.getInput(); //get the user's selection
+//            done = this.doAction(value);
+//        } while (!done); //a selection is not Exit        
 
     }
 

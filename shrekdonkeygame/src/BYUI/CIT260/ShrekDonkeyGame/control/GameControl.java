@@ -17,6 +17,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import shrekdonkeygame.Shrekdonkeygame;
 
 /**
@@ -71,14 +72,19 @@ public class GameControl {
     public static void printActors(Actor[] values, String filePath)
             throws GameControlException {
 
-        try (FileOutputStream fops = new FileOutputStream(filePath)) {
-            ObjectOutputStream output = new ObjectOutputStream(fops);
+        try (PrintWriter output = new PrintWriter(filePath)) {
+            
+            output.println("Actor List");
+            output.println("Actors               Description              Location");
             
             for (Actor characters : values)
-            output.writeObject("Actors          Description          Location" 
-                             + "\n" + characters + ":          " 
+            
+                output.println(characters + ":          " 
                              + characters.getDescription()
-                             + characters.getCoordinates());
+                             + "          "
+                             + characters.getCoordinates().getX()
+                             + "  "
+                             + characters.getCoordinates().getY());
         }
         catch(IOException e) {
             throw new GameControlException(e.getMessage());

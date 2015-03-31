@@ -1,6 +1,7 @@
 package BYUI.CIT260.ShrekDonkeyGame.view;
 
 import BYUI.CIT260.ShrekDonkeyGame.control.MapControl;
+import BYUI.CIT260.ShrekDonkeyGame.exceptions.MoveToViewException;
 import BYUI.CIT260.ShrekDonkeyGame.model.Actor;
 import java.util.Scanner;
 
@@ -24,7 +25,7 @@ public class MoveToView extends View {
         //   }
         String value = (String) obj;
         char choice = value.toUpperCase().charAt(0);
-
+        try {
         switch (choice) {
             case 'G': //go to a coordinate entering screen
                 this.getCoordinate();
@@ -32,11 +33,17 @@ public class MoveToView extends View {
             case 'E': //go back to main menu
                 return true;
             default:
-
-                break;
-
+                ErrorView.display(this.getClass().getName(),
+                            "\n*** Invalid selection *** Try again");
+                    throw new MoveToViewException("Your command cannot be processed"
+                            + " because you did not enter a"
+                            + " correct character");
+            }
+        } catch (MoveToViewException mtve) {
+            ErrorView.display(this.getClass().getName(),
+                    mtve.getMessage());
         }
-        return false;
+        return true;
     }
 
     private void getCoordinate() {

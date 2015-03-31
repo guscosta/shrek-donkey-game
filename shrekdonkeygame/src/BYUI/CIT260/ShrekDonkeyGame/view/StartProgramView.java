@@ -42,6 +42,7 @@ public class StartProgramView extends View {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
 
+        System.exit(0);
         return true;
     }
 
