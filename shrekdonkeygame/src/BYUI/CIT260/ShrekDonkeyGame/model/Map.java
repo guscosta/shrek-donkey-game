@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import shrekdonkeygame.Shrekdonkeygame;
 import BYUI.CIT260.ShrekDonkeyGame.model.RegularScene.SceneType;
+import static BYUI.CIT260.ShrekDonkeyGame.model.RegularScene.SceneType.woods;
 import BYUI.CIT260.ShrekDonkeyGame.view.ErrorView;
 
 public class Map implements Serializable {
@@ -110,10 +111,11 @@ public class Map implements Serializable {
         
         RegularScene castle = new RegularScene();
         castle.setDescription(
-                "\nBe ready to encounter all of the Farquad's guards.");
+                "\nOh no! You just found the Dragon!");
         castle.setMapSymbol(" CT ");
         castle.setBlocked(false);
         castle.setTravelTime(240);
+        castle.setEnemy(Enemy.Dragon);
         //ImageIcon startingSceneImage = MapControl.getImage(startingScene, "trollololol");
         //startingScene.setIcon(startingSceneImage);
         scenes[SceneType.castle.ordinal()] = castle;
@@ -138,6 +140,18 @@ public class Map implements Serializable {
         //startingScene.setIcon(startingSceneImage);
         scenes[SceneType.food.ordinal()] = food;
         
+        RegularScene woods = new RegularScene();
+        woods.setDescription(
+                "\nAnnoying Robin Hood and his gang think Shrek kidnapped fiona."
+               +"\n are you going to do anything about it?");
+        woods.setMapSymbol(" WD ");
+        woods.setBlocked(false);
+        woods.setTravelTime(240);
+        woods.setEnemy(Enemy.RobinHood);
+        //ImageIcon startingSceneImage = MapControl.getImage(startingScene, "trollololol");
+        //startingScene.setIcon(startingSceneImage);
+        scenes[SceneType.woods.ordinal()] = woods;
+        
         RegularScene arrow = new RegularScene();
         arrow.setDescription(
                 "\nYou have to help Shrek get the arrow off of his butt!");
@@ -154,6 +168,7 @@ public class Map implements Serializable {
         duloc.setMapSymbol(" DC ");
         duloc.setBlocked(false);
         duloc.setTravelTime(240);
+        duloc.setEnemy(Enemy.Guards);
         //ImageIcon startingSceneImage = MapControl.getImage(startingScene, "trollololol");
         //startingScene.setIcon(startingSceneImage);
         scenes[SceneType.duloc.ordinal()] = duloc;

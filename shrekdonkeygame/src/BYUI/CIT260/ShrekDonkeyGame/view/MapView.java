@@ -8,10 +8,6 @@ package BYUI.CIT260.ShrekDonkeyGame.view;
 import BYUI.CIT260.ShrekDonkeyGame.model.Location;
 import shrekdonkeygame.Shrekdonkeygame;
 
-/**
- *
- * @author hecto_000
- */
 public class MapView extends View {
 
     public MapView(String promptMessage) {
@@ -22,9 +18,11 @@ public class MapView extends View {
     public void displayMap() {
 
         Location[][] locations = Shrekdonkeygame.getCurrentGame().getMap().getLocations();
+        this.console.println("MAP" 
+                + "\n 1  2  3  4  5 ");
         for (int i = 0; i < locations.length; i++) {
             this.console.println(" - ");
-            this.console.println(locations.length);
+            this.console.println(i + 1);
 
             for (int j = 0; j < locations[i].length; j++) {
                 this.console.println(" | ");

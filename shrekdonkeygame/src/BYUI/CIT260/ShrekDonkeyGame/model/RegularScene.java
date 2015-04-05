@@ -9,6 +9,7 @@ public class RegularScene implements Serializable {
     private String mapSymbol;
     private Boolean blocked;
     private double travelTime;
+    private Enemy enemy;
     
     public enum SceneType {
         
@@ -76,6 +77,15 @@ public class RegularScene implements Serializable {
     public void setTravelTime(double travelTime) {
         this.travelTime = travelTime;
     }
+
+    public Enemy getEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
+    }
+    
 
     @Override
     public String toString() {

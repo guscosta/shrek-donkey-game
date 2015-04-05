@@ -17,15 +17,14 @@ public class StartProgramView extends View {
                 + "\n* you will also be able to kick bad guys and do puzzles.   *"
                 + "                                                           *"
                 + "\n* Good luck and have fun in this adventure.                *"
-                + "\n*                                                          *"
-                + "***************************************************************"
+                + "\n************************************************************"
                 + "\n\nPlease enter you name: ");
     }
 
     public void displayWelcomeMessage(Player player) {
         this.console.println("\n\n============================================");
-        this.console.println("\twelcome to the jungle " + player.getName());
-        this.console.println("\twe got fun and games!");
+        this.console.println("\tWelcome " + player.getName());
+        this.console.println("\tGood look with your quest.");
         this.console.println("==============================================");
     }
 

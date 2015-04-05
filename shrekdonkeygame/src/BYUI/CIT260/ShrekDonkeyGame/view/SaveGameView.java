@@ -59,5 +59,6 @@ public class SaveGameView extends View{
         } catch (Exception ex) {
             ErrorView.display("SaveGameView", ex.getMessage());
         }
+        this.console.println("Your game has been ");
     }
 }

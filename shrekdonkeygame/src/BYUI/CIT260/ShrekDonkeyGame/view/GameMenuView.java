@@ -81,6 +81,8 @@ public class GameMenuView extends View {
 
     private void displayMap() { 
         Map mapLocations = new Map(5,5);
+        MapView mapView = new MapView(promptMessage);
+        mapView.displayMap();
         mapLocations.getLocations();
     }
 

@@ -12,7 +12,7 @@ import shrekdonkeygame.Shrekdonkeygame;
 
 public abstract class View implements ViewInterface {
 
-    private String promptMessage;
+    String promptMessage;
 
     protected final BufferedReader keyboard = Shrekdonkeygame.getInFile();
     protected final PrintWriter console = Shrekdonkeygame.getOutFile();
